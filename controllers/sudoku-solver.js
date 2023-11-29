@@ -1,7 +1,17 @@
 class SudokuSolver {
-
-  validate(puzzleString) {
-  }
+    validate(puzzle) {
+      if (!puzzle) {
+        return 'Required field missing';
+      }
+      if (puzzle.length != 81) {
+        return 'Expected puzzle to be 81 characters long';
+      }
+      if (/[^1-9.]/g.test(puzzle)) {
+        return 'Invalid characters in puzzle';
+      }
+      return 'Valid';
+    }
+   
 
   checkRowPlacement(puzzleString, row, column, value) {
 
@@ -16,7 +26,7 @@ class SudokuSolver {
   }
 
   solve(puzzleString) {
-    
+
   }
 }
 
